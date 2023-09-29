@@ -1,4 +1,4 @@
-// Funktion zum Suchen von Produkten
+// Funktion zum Suchen von Posts
 function searchPosts() {
     const searchTerm = document.getElementById("search-input").value;
     fetch(`https://dummyjson.com/posts/search?q=${searchTerm}`)
@@ -32,7 +32,7 @@ function displayResults(posts) {
     }
 }
 
-// Event Listener hinzufügen, um die Produktdetails aufzurufen, wenn auf einen Produktnamen geklickt wird.
+// Event Listener hinzufügen, um die Postdetails aufzurufen, wenn auf einen Posttitel geklickt wird.
 document.addEventListener("DOMContentLoaded", function () {
     const searchButton = document.querySelector("button");
     searchButton.addEventListener("click", searchPosts);
