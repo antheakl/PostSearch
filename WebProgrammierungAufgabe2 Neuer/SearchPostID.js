@@ -1,35 +1,28 @@
 // Funktion zum Suchen von Posts
-function searchPosts() {
-    const searchTerm = document.getElementById("search-input").value;
-    fetch(`https://dummyjson.com/posts/search?q=${searchTerm}`)
-        .then(res => res.json())
-        .then(data => {
-            displayResults(data.posts);
-        })
-        .catch(error => {
-            console.error("Da ist etwas falsch gelaufen..sorry!", error);
-        });
-}
-function displayResults(posts) {
-    const resultsDiv = document.getElementById("results");
-    resultsDiv.innerHTML = ""; // Lösche vorherige Ergebnisse
+async function searchPosts() {
+    try {
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = ""; // Lösche vorherige Ergebnisse
+        const searchTerm = document.getElementById("search-input").value;
+        const response = await fetch(`https://dummyjson.com/posts/search?q=${searchTerm}`);
+        const data = await response.json();
 
-    if (posts.length === 0) {
-        resultsDiv.innerHTML = "<p>Keine Posts mit diesem Inhalt gefunden.</p>";
-    } else {
-        const ul = document.createElement("ul");
-
-        posts.forEach(post => {
+        if(!data.posts || data.posts.length=== 0){
+            resultsDiv.innerHTML = "<p>Keine Posts mit diesem Inhalt gefunden.</p>";
+        }
+        for(let post of data.posts || []){
+            const ul = document.createElement("ul");
             const li = document.createElement("li");
             const link = document.createElement("a");
             link.textContent = post.title;
             link.href = `Detailview.html?id=${post.id}`; // Verlinke zur Detailseite mit Produkt-ID
             li.appendChild(link);
             ul.appendChild(li);
-        });
-
-        resultsDiv.appendChild(ul);
-    }
+            resultsDiv.appendChild(ul);
+        }
+    } catch(error){
+            console.error("Da ist etwas falsch gelaufen..sorry!", error);
+        }
 }
 
 // Event Listener hinzufügen, um die Postdetails aufzurufen, wenn auf einen Posttitel geklickt wird.
