@@ -86,10 +86,13 @@ function displayPostComments(comments) {
     const modal2Content = document.createElement("div");
     modal2Content.classList.add("modal2-content");
 
+    const kommentarUeberschrift = document.createElement("h2");
+    kommentarUeberschrift.textContent = `Kommentare:`;
+
+    modal2Content.appendChild(kommentarUeberschrift);
+
     if(comments.comments[0] != null)
     {
-        const kommentarUeberschrift = document.createElement("h2");
-        kommentarUeberschrift.textContent = `Kommentare:`;
 
         //Kommentare aus Array holen
         const commentUser = document.createElement("p");
@@ -100,7 +103,6 @@ function displayPostComments(comments) {
 
 
         // alle Modal-Inhalte zum modalContent-div hinzufügen
-        modal2Content.appendChild(kommentarUeberschrift);
         modal2Content.appendChild(commentUser);
         modal2Content.appendChild(commentBody);
 

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="673bdfb0-9305-477e-bab0-fc7667abef84" name="Changes" comment="" />
+    <list default="true" id="673bdfb0-9305-477e-bab0-fc7667abef84" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/WebProgrammierungAufgabe2 Neuer/SearchPostDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebProgrammierungAufgabe2 Neuer/SearchPostDetails.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +46,7 @@
       <updated>1695901377916</updated>
       <workItem from="1695901378959" duration="449000" />
       <workItem from="1695901993918" duration="121000" />
+      <workItem from="1695972733928" duration="871000" />
     </task>
     <servers />
   </component>
