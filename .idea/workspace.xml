@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="673bdfb0-9305-477e-bab0-fc7667abef84" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProgrammierungAufgabe2 Neuer/SearchPostID.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebProgrammierungAufgabe2 Neuer/SearchPostID.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProgrammierungAufgabe2 Neuer/SearchPostDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebProgrammierungAufgabe2 Neuer/SearchPostDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "searchPostchanged",
+    "git-widget-placeholder": "PostDetailsandCommentsChanged",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +52,7 @@
       <workItem from="1695974485352" duration="5000" />
       <workItem from="1695984974288" duration="412000" />
       <workItem from="1695985444720" duration="601000" />
+      <workItem from="1695987070164" duration="2172000" />
     </task>
     <servers />
   </component>
