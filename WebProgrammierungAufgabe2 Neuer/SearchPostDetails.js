@@ -47,7 +47,7 @@ function displayPostDetails(post) {
     const modal1Content = document.createElement("div");
     modal1Content.classList.add("modal1-content");
 
-    // Modal befüllen mit Details des Post
+    // Modal befüllen mit Details des Posts
     const postTitle = document.createElement("h2");
     postTitle.textContent = `Post-title: ${ post.title}`;
 
