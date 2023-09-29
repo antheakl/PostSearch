@@ -49,7 +49,7 @@ async function getPostDetails(postId) {
 
         // modalContent-div zum Modal hinzufügen
         modal1.appendChild(modal1Content);
-
+//test
         //das Modal zum Dokument hinzufügen
         document.body.appendChild(modal1);
 
