@@ -77,6 +77,14 @@ async function getPostComments(postId){
         modal2Content.appendChild(kommentarUeberschrift);
         console.log(comments.comments[0]);
 
+        if (comments.comments || Array.isArray(comments.comments) || comments.comments.length > 0) {
+            for (let comment of comments.comments) {
+                let body = comment?.body?.htmlContent || "Kein Kommentar"; //zum Abfangen wenn in body kein Unterelement drin ist dann einfach comment.body
+            }
+        } else {
+
+        }
+
         if(comments.comments[0] != null) {
             //Kommentare aus Array holen
             const commentUser = document.createElement("p");
