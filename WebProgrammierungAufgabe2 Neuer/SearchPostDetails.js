@@ -75,30 +75,22 @@ async function getPostComments(postId){
         kommentarUeberschrift.textContent = `Kommentare:`;
 
         modal2Content.appendChild(kommentarUeberschrift);
-        console.log(comments.comments[0]);
 
+        //Kommentare aus Array holen
         if (comments.comments || Array.isArray(comments.comments) || comments.comments.length > 0) {
             for (let comment of comments.comments) {
-                let body = comment?.body?.htmlContent || "Kein Kommentar"; //zum Abfangen wenn in body kein Unterelement drin ist dann einfach comment.body
+
+                const commentUser = document.createElement("p");
+                commentUser.textContent = `Username: ${comment?.user?.username || "Kein Username gefunden"}`;
+
+                const commentBody = document.createElement("p");
+                commentBody.textContent = `Comment: ${comment.body}`;
+
+                // alle Modal-Inhalte zum modalContent-div hinzufügen
+                modal2Content.appendChild(commentUser);
+                modal2Content.appendChild(commentBody);
             }
         } else {
-
-        }
-
-        if(comments.comments[0] != null) {
-            //Kommentare aus Array holen
-            const commentUser = document.createElement("p");
-            commentUser.textContent = `Username: ${comments.comments[0].user.username}`;
-
-            const commentBody = document.createElement("p");
-            commentBody.textContent = `Comment: ${comments.comments[0].body}`;
-
-
-            // alle Modal-Inhalte zum modalContent-div hinzufügen
-            modal2Content.appendChild(commentUser);
-            modal2Content.appendChild(commentBody);
-        }
-        else{
             const keineKommentare = document.createElement("p");
             keineKommentare.textContent = `Für diesen Post sind leider keine Kommentare vorhanden`
 
@@ -109,7 +101,6 @@ async function getPostComments(postId){
 
         //das Modal zum Dokument hinzufügen
         document.body.appendChild(modal2);
-
     }catch(error){
             console.error("Fehler beim Abrufen von Kommentardetails:", error);
             displayError("Fehler beim Abrufen von Kommentardetails.");
