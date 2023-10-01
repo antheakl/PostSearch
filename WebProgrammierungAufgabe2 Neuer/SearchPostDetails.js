@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //Post Details abrufen
 async function getPostDetails(postId) {
     try {
+        //Post ID in API unter Posts suchen
         const response = await fetch(`https://dummyjson.com/posts/${postId}`);
         const post = await response.json();
         // Modal erstellen
@@ -26,7 +27,7 @@ async function getPostDetails(postId) {
 
         // Modal befüllen mit Details des Posts
         const postTitle = document.createElement("h2");
-        postTitle.textContent = `Post-title: ${post.title}`;
+        postTitle.textContent = `Titel: ${post.title}`;
 
         const postBody = document.createElement("p");
         postBody.textContent = `Post: ${post.body}`;
@@ -64,6 +65,7 @@ async function getPostDetails(postId) {
 //Post Kommentare abrufen
 async function getPostComments(postId) {
     try {
+        //Kommentare des Posts in API suchen
         const response = await fetch(`https://dummyjson.com/posts/${postId}/comments`);
         const comments = await response.json();
         //Modal2 erstellen
@@ -83,10 +85,10 @@ async function getPostComments(postId) {
             for (let comment of comments.comments) {
 
                 const commentUser = document.createElement("p");
-                commentUser.textContent = `Username: ${comment?.user?.username || "Kein Username gefunden"}`;
+                commentUser.textContent = `User: ${comment?.user?.username || "Kein Username gefunden"}`;
 
                 const commentBody = document.createElement("p");
-                commentBody.textContent = `Comment: ${comment.body}`;
+                commentBody.textContent = `Kommentar: ${comment.body}`;
 
                 // alle Modal-Inhalte zum modalContent-div hinzufügen
                 modal2Content.appendChild(commentUser);
@@ -113,6 +115,7 @@ async function getPostComments(postId) {
 
 async function getAllPostsOfSameUser(userId) {
     try {
+        //Alle Kommentare des Users in API suchen
         const response = await fetch(`https://dummyjson.com/posts/user/${userId}`);
         const userPosts = await response.json();
         //Modal 3 erstellen
@@ -127,7 +130,7 @@ async function getAllPostsOfSameUser(userId) {
 
         modal3Content.appendChild(aehnlichePostsUeberschrift);
 
-        if (userPosts.posts || Array.isArray(userPosts.posts) || userPosts.posts.length > 0) {
+        if ( userPosts.posts.length > 0) {
             for (let similarPosts of userPosts.posts) {
                 //Titel als Links aus Post-Array erzeugen
                 const ul = document.createElement("ul");
