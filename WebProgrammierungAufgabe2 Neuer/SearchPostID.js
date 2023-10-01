@@ -1,16 +1,18 @@
 // Funktion zum Suchen von Posts
 async function searchPosts() {
     try {
+        //Modal für Suchergebnisse erzeugen
         const resultsDiv = document.getElementById("results");
         resultsDiv.innerHTML = ""; // Lösche vorherige Ergebnisse
         const searchTerm = document.getElementById("search-input").value;
         const response = await fetch(`https://dummyjson.com/posts/search?q=${searchTerm}`);
         const data = await response.json();
-
-        if(!data.posts || data.posts.length=== 0){
+        //Wenn Suchbegriff eingegeben wurde, der in keinem Post vorkommt
+        if (!data.posts || data.posts.length === 0) {
             resultsDiv.innerHTML = "<p>Keine Posts mit diesem Inhalt gefunden.</p>";
         }
-        for(let post of data.posts || []){
+        //Erstellen von Links zur Detailansicht mit dem Titel des Posts
+        for (let post of data.posts || []) {
             const ul = document.createElement("ul");
             const li = document.createElement("li");
             const link = document.createElement("a");
@@ -20,9 +22,11 @@ async function searchPosts() {
             ul.appendChild(li);
             resultsDiv.appendChild(ul);
         }
-    } catch(error){
-            console.error("Da ist etwas falsch gelaufen..sorry!", error);
-        }
+    } catch (error) {
+        //Fehleranzeige in Konsole und auf "normalem" Bildschirm
+        console.error("Da ist etwas bei der Suche falsch gelaufen..sorry!", error);
+        displayError("Da ist etwas bei der Suche falsch gelaufen..sorry!");
+    }
 }
 
 // Event Listener hinzufügen, um die Postdetails aufzurufen, wenn auf einen Posttitel geklickt wird.
@@ -34,5 +38,5 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.key === "Enter") {
             searchPosts();
         }
-   });
+    });
 });

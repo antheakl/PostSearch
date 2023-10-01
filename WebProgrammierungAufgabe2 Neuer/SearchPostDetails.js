@@ -55,6 +55,7 @@ async function getPostDetails(postId) {
         await getAllPostsOfSameUser(post.userId);
 
     } catch (error) {
+        //Fehleranzeige in Konsole und auf "normalem" Bildschirm
         console.error("Fehler beim Abrufen der Postdetails:", error);
         displayError("Fehler beim Abrufen der Postdetails.");
     }
@@ -77,7 +78,7 @@ async function getPostComments(postId) {
 
         modal2Content.appendChild(kommentarUeberschrift);
 
-        //Kommentare aus Array holen
+        //Kommentare aus Array holen und in Modul integrieren
         if (comments.comments.length > 0) {
             for (let comment of comments.comments) {
 
@@ -92,17 +93,19 @@ async function getPostComments(postId) {
                 modal2Content.appendChild(commentBody);
             }
         } else {
+            //bei keinen Kommentaren wird Hinweistext unter Überschrift angezeigt
             const keineKommentare = document.createElement("p");
             keineKommentare.textContent = `Für diesen Post sind leider keine Kommentare vorhanden`;
 
             modal2Content.appendChild(keineKommentare);
         }
-        // modalContent-div zum Modal hinzufügen
+        // modal2Content zum Modal hinzufügen
         modal2.appendChild(modal2Content);
 
         //das Modal zum Dokument hinzufügen
         document.body.appendChild(modal2);
     } catch (error) {
+        //Fehleranzeige in Konsole und auf "normalem" Bildschirm
         console.error("Fehler beim Abrufen von Kommentardetails:", error);
         displayError("Fehler beim Abrufen von Kommentardetails.");
     }
@@ -149,6 +152,7 @@ async function getAllPostsOfSameUser(userId) {
 
         document.body.appendChild(modal3);
     } catch (error) {
+        //Fehleranzeige in Konsole und auf "normalem" Bildschirm
         console.error("Fehler beim Abrufen von Kommentaren von gleichem User.", error);
         displayError("Fehler beim Abrufen von Kommentaren von gleichem User.");
     }
