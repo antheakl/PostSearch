@@ -1,10 +1,11 @@
 // Funktion zum Suchen von Posts
 async function searchPosts() {
     try {
-        //Modal für Suchergebnisse erzeugen
+        //Modal für Suchergebnisse erzeugen und vorherige Ergebnisse löschen
         const resultsDiv = document.getElementById("results");
-        resultsDiv.innerHTML = ""; // Lösche vorherige Ergebnisse
+        resultsDiv.innerHTML = "";
         const searchTerm = document.getElementById("search-input").value;
+        //Suche in API eingeben
         const response = await fetch(`https://dummyjson.com/posts/search?q=${searchTerm}`);
         const data = await response.json();
         //Wenn Suchbegriff eingegeben wurde, der in keinem Post vorkommt
@@ -17,7 +18,7 @@ async function searchPosts() {
             const li = document.createElement("li");
             const link = document.createElement("a");
             link.textContent = post.title;
-            link.href = `Detailview.html?id=${post.id}`; // Verlinke zur Detailseite mit Produkt-ID
+            link.href = `Detailview.html?id=${post.id}`;
             li.appendChild(link);
             ul.appendChild(li);
             resultsDiv.appendChild(ul);
