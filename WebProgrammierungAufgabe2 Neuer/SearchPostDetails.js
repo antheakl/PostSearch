@@ -18,6 +18,7 @@ async function getPostDetails(postId) {
         //Post ID in API unter Posts suchen
         const response = await fetch(`https://dummyjson.com/posts/${postId}`);
         const post = await response.json();
+
         // Modal erstellen
         const modal1 = document.createElement("div");
         modal1.classList.add("modal1");
@@ -50,7 +51,7 @@ async function getPostDetails(postId) {
 
         // modalContent-div zum Modal hinzufügen
         modal1.appendChild(modal1Content);
-//test
+
         //das Modal zum Dokument hinzufügen
         document.body.appendChild(modal1);
         await getAllPostsOfSameUser(post.userId);
