@@ -1,5 +1,25 @@
-body {
-    font-family: 'Montserrat', sans-serif;
+body{
+    font-family: Montserrat;
+}
+/*Suchkarten formatieren*/
+/* Stile für die Karten-Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zentriert die Karten horizontal */
+}
+/* Stile für die Karten */
+.card {
+    width: 18rem;
+    margin: 10px; /* Fügt Abstand zwischen den Karten hinzu */
+}
+/* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Karten auf volle Breite ändern */
+        margin: 10px 0; /* Abstand oben und unten hinzufügen */
+        float: none; /* Karten zentrieren */
+    }
 }
 /*Suchleiste formatieren, färben und platzieren*/
 .search-container {
@@ -10,38 +30,4 @@ body {
     align-items: center;
     justify-content: center;
 }
-.results-container {
-    display: none;
-    margin: 20px;
-}
 
-.detail-container {
-    display: none;
-    margin: 20px;
-}
-
-#search-input {
-    padding: 5px;
-}
-
-#search-button {
-    padding: 5px 10px;
-}
-
-#results-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-#detail-title {
-    font-weight: bold;
-}
-
-#detail-body {
-    margin-top: 10px;
-}
