@@ -38,6 +38,7 @@ async function getPostDetails(postId) {
 
         const postReactions = document.createElement("p");
         postReactions.textContent = `Reaktionen: ${post.reactions}`;
+        postReactions.setAttribute("id","reactions");
 
         const postAuthor = document.createElement("p");
         postAuthor.textContent = `Autor-ID: ${post.userId} `;
