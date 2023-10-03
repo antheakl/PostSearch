@@ -30,8 +30,7 @@ body{
 }
 /* Stile für die Karten */
 .card {
-    width: 18rem;
-    margin: 10px; /* Fügt Abstand zwischen den Karten hinzu */
+    width: 20rem;
 }
 /*Link grüne Farbe geben*/
 .card-link{
