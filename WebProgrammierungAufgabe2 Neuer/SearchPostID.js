@@ -4,17 +4,19 @@ async function searchPosts() {
         // Modal für Suchergebnisse erzeugen und vorherige Ergebnisse löschen
         const resultsDiv = document.getElementById("results");
         resultsDiv.innerHTML = "";
+        const failDiv = document.getElementById("failResults");
+        failDiv.innerHTML="";
         const searchTerm = document.getElementById("search-input").value;
         if (searchTerm.trim() === "") {
             // Wenn die Suchanfrage leer ist, zeige eine Nachricht an
-            resultsDiv.innerHTML = "<p>Geben Sie bitte einen Suchbegriff ein.</p>";
+            failDiv.innerHTML = "<p>Geben Sie bitte einen Suchbegriff ein.</p>";
         } else {
             // Suche in API eingeben
             const response = await fetch(`https://dummyjson.com/posts/search?q=${searchTerm}`);
             const data = await response.json();
             // Wenn Suchbegriff eingegeben wurde, der in keinem Post vorkommt
             if (!data.posts || data.posts.length === 0) {
-                resultsDiv.innerHTML = "<p>Keine Posts mit diesem Inhalt gefunden.</p>";
+                failDiv.innerHTML = "<p>Keine Posts mit diesem Inhalt gefunden.</p>";
             } else {
                 for (let post of data.posts || []) {
                     // Erstellen einer Bootstrap-Card für jeden Post
