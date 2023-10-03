@@ -7,3 +7,39 @@ body{
     height: 100vh;
     background-attachment: fixed;
 }
+/*Stile für Card-Container*/
+#post-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zentriert die Karten horizontal */
+}
+#postComments{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zentriert die Karten horizontal */
+}
+#postOfSameUser{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zentriert die Karten horizontal */
+}
+/* Stile für die Karten */
+/*Link grüne Farbe geben*/
+.card-link{
+    color: #4d5d53;
+}
+.card-body{
+    background-color: #faf0e6;
+}
+/* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Karten auf volle Breite ändern */
+        margin: 10px 0; /* Abstand oben und unten hinzufügen */
+        float: none; /* Karten zentrieren */
+    }
+}
+.card-title{
+    font-weight: bold;
+    text-decoration: underline;
+}

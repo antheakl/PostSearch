@@ -21,8 +21,7 @@ async function searchPosts() {
                 for (let post of data.posts || []) {
                     // Erstellen einer Bootstrap-Card für jeden Post
                     const cardDiv = document.createElement("div");
-                    cardDiv.className = "card";
-                    cardDiv.style = "width: 18rem;";
+                    cardDiv.className = "card m-2";
                     const cardBodyDiv = document.createElement("div");
                     cardBodyDiv.className = "card-body";
 
