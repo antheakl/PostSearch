@@ -8,6 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -25,7 +28,7 @@
 <body>
 
 <!--Navigationsleiste-->
-<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="light" style="background-color:#99BADD">
+<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="light" style="background-color:#AEAD92">
     <div class="container-fluid">
         <a class="navbar-brand" href="Startview.html">
             <img src="blog_4922073.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
@@ -49,19 +52,23 @@
         </span>
     </div>
 </nav>
-
-
+<!--Suchleiste-->
+<div class="input-wrapper">
     <input type="text" id="search-input" onkeydown="Javascript: if (event.keyCode==13) searchPosts();"
-           placeholder="Search posts here...">
-    <button onclick="searchPosts()">Suchen</button>
+           placeholder="Suche Posts hier...">
+    <button onclick="searchPosts()"><i class="fa fa-search"></i></button>
+</div>
 
 <!-- Suchkarten-->
 <div class="card-container" id="results">
 </div>
 
+<!-- Für Fehlermeldungen gebautes Div-->
+<div class="fail-results" id="failResults"></div>
 
-    <!--Java Script-->
-    <script src="SearchPostID.js"></script>
+<!--Java Script-->
+<script src="SearchPostID.js"></script>
+
 </body>
 </html>
 
