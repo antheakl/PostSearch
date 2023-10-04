@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // die Produkt-ID aus der URL holen
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get("id");
-
+    //Funktionen für Details und Kommentare der Posts aufrufen
     if (postId) {
         getPostDetails(postId);
         getPostComments(postId);
     } else {
         // Fehlerfall, wenn keine PostID in der URL gefunden wurde
-        displayError("There is no post-id for this post. Please try again.");
+        displayError("Wir haben leider keine Post-ID in der Anfrage gefunden. Bitte suche erneut.");
     }
 });
 
@@ -19,7 +19,7 @@ async function getPostDetails(postId) {
         const response = await fetch(`https://dummyjson.com/posts/${postId}`);
         const post = await response.json();
 
-        // Erstellen einer Bootstrap Card für die Postdetails
+        // Erstellen einer Bootstrap Card für die Postdetails und befüllen mit Detail-Daten
         const postDetailsCard = document.createElement("div");
         postDetailsCard.classList.add("card");
         postDetailsCard.innerHTML = `
@@ -35,7 +35,7 @@ async function getPostDetails(postId) {
         // Füge die Bootstrap Card dem DOM hinzu
         const postDetailsContainer = document.getElementById("postDetailsContainer");
         postDetailsContainer.appendChild(postDetailsCard);
-
+        //Funktion für andere Posts des Users aufrufen
         await getAllPostsOfSameUser(post.userId);
 
     } catch (error) {
@@ -55,11 +55,7 @@ async function getPostComments(postId) {
         // Erstellen einer Bootstrap Card für die Kommentare
         const commentsCard = document.createElement("div");
         commentsCard.classList.add("card");
-        commentsCard.innerHTML = `
-            <div class="card-body">
-                <h5 class="card-title">Kommentare:</h5>
-            </div>
-        `;
+        commentsCard.innerHTML = `<div class="card-body"><h5 class="card-title">Kommentare:</h5></div>`;
 
         const cardBody = commentsCard.querySelector(".card-body");
 
@@ -100,7 +96,7 @@ async function getPostComments(postId) {
 
 async function getAllPostsOfSameUser(userId) {
     try {
-        // Alle Kommentare des Users in API suchen
+        // Alle Posts des Users in API suchen
         const response = await fetch(`https://dummyjson.com/posts/user/${userId}`);
         const userPosts = await response.json();
 
@@ -112,9 +108,9 @@ async function getAllPostsOfSameUser(userId) {
                 <h5 class="card-title">Andere Posts des Users:</h5>
             </div>
         `;
-
+        //Card-Body erstellen
         const cardBody = userPostsCard.querySelector(".card-body");
-
+        //Card-Body mit Links zu anderen Posts befüllen
         if (userPosts.posts.length > 0) {
             for (let similarPosts of userPosts.posts) {
                 // Titel als Links aus Post-Array erzeugen
@@ -122,10 +118,10 @@ async function getAllPostsOfSameUser(userId) {
                 link.textContent = similarPosts.title;
                 link.href = `Detailview.html?id=${similarPosts.id}`;
                 link.classList.add("card-link");
-
                 // Füge den Link zur Card hinzu
                 cardBody.appendChild(link);
             }
+            //Wenn keine anderen Posts vorhanden sein sollten
         } else {
             const keinePosts = document.createElement("p");
             keinePosts.textContent = `Dieser User hat sonst leider keine anderen Posts.`;

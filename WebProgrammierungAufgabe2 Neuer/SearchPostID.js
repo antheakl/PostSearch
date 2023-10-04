@@ -1,17 +1,18 @@
-// Funktion zum Suchen von Posts
+// Funktion zum Suchen von Posts mit Inhalt der Suche
 async function searchPosts() {
     try {
-        // Modal für Suchergebnisse erzeugen und vorherige Ergebnisse löschen
+        // Div für Ergebnisse registrieren und vorherige Ergebnisse löschen
         const resultsDiv = document.getElementById("results");
         resultsDiv.innerHTML = "";
         const failDiv = document.getElementById("failResults");
         failDiv.innerHTML="";
+        //Suche aus search-input holen
         const searchTerm = document.getElementById("search-input").value;
         if (searchTerm.trim() === "") {
             // Wenn die Suchanfrage leer ist, zeige eine Nachricht an
             failDiv.innerHTML = "<p>Geben Sie bitte einen Suchbegriff ein.</p>";
         } else {
-            // Suche in API eingeben
+            // API nach Suchbegriff durchsuchen
             const response = await fetch(`https://dummyjson.com/posts/search?q=${searchTerm}`);
             const data = await response.json();
             // Wenn Suchbegriff eingegeben wurde, der in keinem Post vorkommt
@@ -25,26 +26,28 @@ async function searchPosts() {
                     const cardBodyDiv = document.createElement("div");
                     cardBodyDiv.className = "card-body";
 
-                    // Card-Titel
+                    //Post-Titel als Card-Titel hinzufügen
                     const cardTitle = document.createElement("h5");
                     cardTitle.className = "card-title";
                     cardTitle.textContent = post.title;
 
-                    // Weitere Informationen (Card-Subtitle oder Card-Text)
+                    //Reaktionen als Card-Subtitle hinzufügen
                     const cardSubtitle = document.createElement("h6");
                     cardSubtitle.className = "card-subtitle mb-2 text-body-secondary";
                     cardSubtitle.textContent = `${post.reactions} Reaktionen`;
 
+                    //Tags des Posts als Card-Text hinzufügen
                     const cardText = document.createElement("p");
                     cardText.className = "card-text";
                     cardText.textContent = `Tags: ${post.tags}`;
 
-                    // Link zur Detailansicht
+                    // Link zur Detailansicht als Card-Links hinzufügen
                     const cardLink = document.createElement("a");
                     cardLink.className = "card-link";
                     cardLink.textContent = "Details";
                     cardLink.href = `Detailview.html?id=${post.id}`;
 
+                    //Alle Elemente der Card dem CardBody hinzufügen und schließlich dem Ergebnis Div
                     cardBodyDiv.appendChild(cardTitle);
                     cardBodyDiv.appendChild(cardSubtitle);
                     cardBodyDiv.appendChild(cardText);
@@ -62,7 +65,7 @@ async function searchPosts() {
 }
 
 
-// Event Listener hinzufügen, um die Postdetails aufzurufen, wenn auf einen Posttitel geklickt wird.
+// Event Listener hinzufügen, um Posts zu suchen, wenn auf Suchen-Button gedrückt wird.
 document.addEventListener("DOMContentLoaded", function () {
     const searchButton = document.querySelector("button");
     searchButton.addEventListener("click", searchPosts);

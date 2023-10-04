@@ -1,4 +1,5 @@
 body{
+    /*Google Font*/
     font-family: Montserrat;
     /*Hintergrundbild*/
     background-image: url("BooksBackgroundPicture.jpg");
@@ -7,35 +8,30 @@ body{
     height: 100vh;
     background-attachment: fixed;
 }
-/*Stile für Card-Container*/
-#post-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Zentriert die Karten horizontal */
-}
-#postComments{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Zentriert die Karten horizontal */
-}
-#postOfSameUser{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Zentriert die Karten horizontal */
-}
 /*Navigationsleiste formatieren*/
+.navbar-toggler{
+    border: none;
+    outline: none;
+}
+/*Navigationslinks Hover Effekt geben*/
 .nav-link:hover{
     text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
 }
 /* Stile für die Karten */
-/*Link grüne Farbe geben*/
-.card-link{
-    color: #4d5d53;
-}
 .card{
     border-radius: 0.5rem;
     background-color: #faf0e6;
 }
+/*Card-Titel unterstreichen und Dicker*/
+.card-title{
+    font-weight: bold;
+    text-decoration: underline;
+}
+/*Link grüne Farbe geben*/
+.card-link{
+    color: #4d5d53;
+}
+/*Card-Link Hover Effekt hinzufügen*/
 .card-link:hover{
     text-shadow: 0.25rem 0.25rem 0.5rem#AEAD92;
 }
@@ -46,8 +42,4 @@ body{
         margin: 10px 0; /* Abstand oben und unten hinzufügen */
         float: none; /* Karten zentrieren */
     }
-}
-.card-title{
-    font-weight: bold;
-    text-decoration: underline;
 }

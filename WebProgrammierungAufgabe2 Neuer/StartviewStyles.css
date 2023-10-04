@@ -1,4 +1,5 @@
 body{
+    /*Google-Font*/
     font-family: Montserrat;
     /*Hintergrundbild*/
     background-image: url("BooksBackgroundPicture.jpg");
@@ -16,7 +17,7 @@ body{
     box-shadow: 0.25rem 0.25rem 0.5rem #4d5d53;
     text-align: center;
 }
-/*Navigationsleiste formatieren*/
+/*Navigationsleisten Links und Burger-Menü formatieren*/
 .navbar-toggler{
     border: none;
     outline: none;
@@ -41,6 +42,7 @@ body{
 .card-link{
     color: #4d5d53;
 }
+/*Card-Links Hover Effekt geben*/
 .card-link:hover{
     text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
 }
@@ -78,9 +80,11 @@ input{
     background: #AEAD92;
     color: #4d5d53;
 }
+/*Platzhalter-Text einfärben*/
 ::placeholder{
     color: #4d5d53;
 }
+/*Suchglas grüne Farbe geben und Maus als Hover registrieren*/
 .input-wrapper button{
     background-color: #AEAD92;
     border: none;
@@ -89,6 +93,7 @@ input{
     cursor: pointer;
     color: #4d5d53;
 }
+/*Suchbutton Hover Effekt geben*/
 .input-wrapper button:hover{
     background-color: #faf0e6;
 }
