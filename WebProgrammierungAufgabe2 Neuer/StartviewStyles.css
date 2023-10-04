@@ -33,6 +33,8 @@ body{
 }
 /* Stile für die Karten */
 .card {
+    border-radius: 0.5rem;
+    background-color: #faf0e6;
     width: 20rem;
 }
 /*Link grüne Farbe geben*/
@@ -41,9 +43,6 @@ body{
 }
 .card-link:hover{
     text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
-}
-.card-body{
-    background-color: #faf0e6;
 }
 /* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
 @media (max-width: 768px) {

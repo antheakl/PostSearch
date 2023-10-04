@@ -32,11 +32,12 @@ body{
 .card-link{
     color: #4d5d53;
 }
+.card{
+    border-radius: 0.5rem;
+    background-color: #faf0e6;
+}
 .card-link:hover{
     text-shadow: 0.25rem 0.25rem 0.5rem#AEAD92;
-}
-.card-body{
-    background-color: #faf0e6;
 }
 /* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
 @media (max-width: 768px) {
