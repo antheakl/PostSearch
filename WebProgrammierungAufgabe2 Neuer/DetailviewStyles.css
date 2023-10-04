@@ -23,10 +23,17 @@ body{
     flex-wrap: wrap;
     justify-content: center; /* Zentriert die Karten horizontal */
 }
+/*Navigationsleiste formatieren*/
+.nav-link:hover{
+    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
+}
 /* Stile für die Karten */
 /*Link grüne Farbe geben*/
 .card-link{
     color: #4d5d53;
+}
+.card-link:hover{
+    text-shadow: 0.25rem 0.25rem 0.5rem#AEAD92;
 }
 .card-body{
     background-color: #faf0e6;

@@ -21,6 +21,9 @@ body{
     border: none;
     outline: none;
 }
+.nav-link:hover{
+    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
+}
 /*Suchkarten formatieren*/
 /* Stile für die Karten-Container */
 .card-container {
@@ -35,6 +38,9 @@ body{
 /*Link grüne Farbe geben*/
 .card-link{
     color: #4d5d53;
+}
+.card-link:hover{
+    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
 }
 .card-body{
     background-color: #faf0e6;
