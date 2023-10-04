@@ -66,10 +66,4 @@ async function searchPosts() {
 document.addEventListener("DOMContentLoaded", function () {
     const searchButton = document.querySelector("button");
     searchButton.addEventListener("click", searchPosts);
-    searchButton.addEventListener("keydown", function (event) {
-        //Schauen ob Enter gedrückt wurde
-        if (event.key === "Enter") {
-            searchPosts();
-        }
-    });
 });

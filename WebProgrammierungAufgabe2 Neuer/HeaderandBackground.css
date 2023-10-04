@@ -1,0 +1,14 @@
+body{
+    font-family: Montserrat;
+    /*Hintergrundbild*/
+    background-image: url("BooksBackgroundPicture.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+/*Navigationsleiste formatieren*/
+.navbar-toggler{
+    border: none;
+    outline: none;
+}
