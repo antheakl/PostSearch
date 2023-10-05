@@ -35,8 +35,7 @@ async function getPostDetails(postId) {
                 <div class="user-profile">
                 <img class="user-image" src=${user.image} alt="Benutzerbild">
                     <div class="user-info">
-                    <p class="name">${user.firstName} ${user.lastName}</p>
-                    <p class="alter">${user.age}</p>
+                    <p class="name">${user.firstName} ${user.lastName} ${user.age}</p>
                     </div>
                 </div>
                  </p>
@@ -73,8 +72,17 @@ async function getPostComments(postId) {
         // Kommentare aus Array holen und in die Card integrieren
         if (comments.comments.length > 0) {
             for (let comment of comments.comments) {
-                const commentUser = document.createElement("p");
-                commentUser.textContent = `User: ${comment?.user?.username || "Kein Username gefunden"}`;
+
+                const responseUser = await fetch(`https://dummyjson.com/user/${comment.user.id}`);
+                const user = await responseUser.json();
+
+                const commentUser = document.createElement("div");
+                commentUser.innerHTML = `<div class= "user-profile-comments">
+                    <img class="user-image" src=${user.image} alt="Benutzerbild"></img>
+                        <div class="user-info">
+                            <p class="name">${user.firstName} ${user.lastName} ${user.age}</p>
+                        </div>
+                </div>`;
 
                 const commentBody = document.createElement("p");
                 commentBody.textContent = `Kommentar: ${comment.body}`;

@@ -54,6 +54,13 @@ body{
     align-items: center;
     gap: 1em;
 }
+/*Stil für Kommentar-Karten Profile*/
+.user-profile-comments{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 /* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
 @media (max-width: 768px) {
     .card {
