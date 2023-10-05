@@ -26,7 +26,7 @@ async function getPostDetails(postId) {
             <div class="card-body">
                 <h5 class="card-title">${post.title}</h5>
                 <p class="card-text">${post.body}</p>
-                <p class="card-text"><strong>Tags:</strong> ${post.tags}</p>
+                <p class="card-text"><strong>Tags:</strong> ${post.tags.map((tag)=>("#"+tag+" "))}</p>
                 <p class="card-text"><strong>Reaktionen:</strong> ${post.reactions}</p>
                 <p class="card-text"><strong>Autor-ID:</strong> ${post.userId}</p>
             </div>
