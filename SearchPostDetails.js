@@ -72,10 +72,10 @@ async function getPostComments(postId) {
         // Kommentare aus Array holen und in die Card integrieren
         if (comments.comments.length > 0) {
             for (let comment of comments.comments) {
-
+                //User-Profilbild und Namen aus API holen
                 const responseUser = await fetch(`https://dummyjson.com/user/${comment.user.id}`);
                 const user = await responseUser.json();
-
+                //Profilbild und Namen in div einfügen
                 const commentUser = document.createElement("div");
                 commentUser.innerHTML = `<div class= "user-profile-comments">
                     <img class="user-image" src=${user.image} alt="Benutzerbild"></img>
