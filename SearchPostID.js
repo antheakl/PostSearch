@@ -69,4 +69,17 @@ async function searchPosts() {
 document.addEventListener("DOMContentLoaded", function () {
     const searchButton = document.querySelector("button");
     searchButton.addEventListener("click", searchPosts);
+
+    //Header und Hintergrund aus Header HTML laden
+    fetch("Header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        });
+    //Footer wird aus Footer HTML laden
+    fetch("Footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
 });

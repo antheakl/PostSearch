@@ -1,64 +1,3 @@
-body{
-    /*Google-Font*/
-    font-family: Montserrat, Arial;
-    /*Hintergrundbild*/
-    background-image: url("BooksBackgroundPicture.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-attachment: fixed;
-    /*Footer*/
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-}
-/*Fail-Results formatieren*/
-.fail-results{
-    color: #4d5d53;
-    background-color: #AEAD92;
-    margin: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0.25rem 0.25rem 0.5rem #4d5d53;
-    text-align: center;
-}
-/*Navigationsleisten Links und Burger-Menü formatieren*/
-.navbar-toggler{
-    border: none;
-    outline: none;
-}
-.nav-link:hover{
-    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
-}
-/*Suchkarten formatieren*/
-/* Stile für die Karten-Container */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Zentriert die Karten horizontal */
-}
-/* Stile für die Karten */
-.card {
-    border-radius: 0.5rem;
-    background-color: #faf0e6;
-    width: 20rem;
-}
-/*Link grüne Farbe geben*/
-.card-link{
-    color: #4d5d53;
-}
-/*Card-Links Hover Effekt geben*/
-.card-link:hover{
-    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
-}
-/* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
-@media (max-width: 768px) {
-    .card {
-        width: 100%; /* Karten auf volle Breite ändern */
-        margin: 10px 0; /* Abstand oben und unten hinzufügen */
-        float: none; /* Karten zentrieren */
-    }
-}
 /*Suchleiste formatieren, färben und platzieren*/
 #search-input{
     font-size: 1rem;
@@ -102,3 +41,42 @@ input{
 .input-wrapper button:hover{
     background-color: #faf0e6;
 }
+/*Fail-Results formatieren*/
+.fail-results{
+    color: #4d5d53;
+    background-color: #AEAD92;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem #4d5d53;
+    text-align: center;
+}
+/*Suchkarten formatieren*/
+/* Stile für die Karten-Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zentriert die Karten horizontal */
+}
+/* Stile für die Karten */
+.card {
+    border-radius: 0.5rem;
+    background-color: #faf0e6;
+    width: 20rem;
+}
+/*Link grüne Farbe geben*/
+.card-link{
+    color: #4d5d53;
+}
+/*Card-Links Hover Effekt geben*/
+.card-link:hover{
+    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
+}
+/* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Karten auf volle Breite ändern */
+        margin: 10px 0; /* Abstand oben und unten hinzufügen */
+        float: none; /* Karten zentrieren */
+    }
+}
+

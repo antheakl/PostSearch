@@ -1,16 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // die Produkt-ID aus der URL holen
-    const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get("id");
-    //Funktionen für Details und Kommentare der Posts aufrufen
-    if (postId) {
-        getPostDetails(postId);
-        getPostComments(postId);
-    } else {
-        // Fehlerfall, wenn keine PostID in der URL gefunden wurde
-        displayError("Wir haben leider keine Post-ID in der Anfrage gefunden. Bitte suche erneut.");
-    }
-});
 
 //Post Details abrufen
 async function getPostDetails(postId) {
@@ -162,4 +149,30 @@ function displayError(message) {
     const postDetailsDiv = document.getElementById("post-details");
     postDetailsDiv.innerHTML = `<p>${message}</p>`;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    // die Produkt-ID aus der URL holen
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get("id");
+    //Funktionen für Details und Kommentare der Posts aufrufen
+    if (postId) {
+        getPostDetails(postId);
+        getPostComments(postId);
+    } else {
+        // Fehlerfall, wenn keine PostID in der URL gefunden wurde
+        displayError("Wir haben leider keine Post-ID in der Anfrage gefunden. Bitte suche erneut.");
+    }
+    //Header und Hintergrund aus Header HTML laden
+    fetch("Header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        });
+    //Footer wird aus Footer HTML laden
+    fetch("Footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+});
 
