@@ -6,9 +6,17 @@ body{
     background-size: cover;
     height: 100vh;
     background-attachment: fixed;
+    /*Footer formatieren*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
 }
 /*Navigationsleiste formatieren*/
 .navbar-toggler{
     border: none;
     outline: none;
+}
+.nav-link:hover{
+    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
 }
