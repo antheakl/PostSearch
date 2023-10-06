@@ -1,27 +1,4 @@
-body{
-    /*Google Font*/
-    font-family: Montserrat, Arial;
-    /*Hintergrundbild*/
-    background-image: url("BooksBackgroundPicture.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-attachment: fixed;
-    /*Footer an Bildschirm unten*/
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-}
-/*Navigationsleiste formatieren*/
-.navbar-toggler{
-    border: none;
-    outline: none;
-}
-/*Navigationslinks Hover Effekt geben*/
-.nav-link:hover{
-    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
-}
+
 /* Stile für die Karten */
 .card{
     border-radius: 0.5rem;
