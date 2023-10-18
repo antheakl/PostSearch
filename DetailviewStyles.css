@@ -47,7 +47,7 @@
 @media (max-width: 768px) {
     .card {
         width: 100%; /* Karten auf volle Breite ändern */
-        margin: 10px 0; /* Abstand oben und unten hinzufügen */
+        margin: 2rem 0; /* Abstand oben und unten hinzufügen */
         float: none; /* Karten zentrieren */
     }
 
