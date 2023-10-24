@@ -6,48 +6,48 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #AEAD92;
+    background: linear-gradient(to right, #33ccff 0%, #9900ff 100%);
     margin-bottom: 0.5rem;
     margin-left: 2rem;
     margin-right: 2rem;
     margin-top: 6rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    color: #4d5d53;
-    box-shadow: 0.25rem 0.25rem 0.5rem #4d5d53;
+    color: black;
+    box-shadow: 0.25rem 0.25rem 0.5rem black;
 }
 input{
     margin: 0 0.5rem 0 0.5rem;
     width: 100%;
     border: none;
     outline: none;
-    background: #AEAD92;
-    color: #4d5d53;
+    background: linear-gradient(to right, #33ccff 0%, #9900ff 100%);
+    color: black;
 }
 /*Platzhalter-Text einfärben*/
 ::placeholder{
-    color: #4d5d53;
+    color: black;
 }
 /*Suchglas grüne Farbe geben und Maus als Hover registrieren*/
 .input-wrapper button{
-    background-color: #AEAD92;
+    background: #9900ff;
     border: none;
     border-radius: 0.5rem;
     outline: none;
     cursor: pointer;
-    color: #4d5d53;
+    color: black;
 }
 /*Suchbutton Hover Effekt geben*/
 .input-wrapper button:hover{
-    background-color: #faf0e6;
+    background-color: grey;
 }
 /*Fail-Results formatieren*/
 .fail-results{
-    color: #4d5d53;
-    background-color: #AEAD92;
+    color: black;
+    background: linear-gradient(to right, #33ccff 0%, #9900ff 100%);
     margin: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 0.25rem 0.25rem 0.5rem #4d5d53;
+    box-shadow: 0.25rem 0.25rem 0.5rem black;
     text-align: center;
 }
 /*Suchkarten formatieren*/
@@ -60,16 +60,16 @@ input{
 /* Stile für die Karten */
 .card {
     border-radius: 0.5rem;
-    background-color: #faf0e6;
+    background-color: white;
     width: 20rem;
 }
 /*Link grüne Farbe geben*/
 .card-link{
-    color: #4d5d53;
+    color: grey;
 }
 /*Card-Links Hover Effekt geben*/
 .card-link:hover{
-    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
+    text-shadow: 0.25rem 0.25rem 0.5rem grey;
 }
 /* Medienabfrage für kleine Bildschirme (z. B. Smartphones) */
 @media (max-width: 768px) {
