@@ -2,7 +2,7 @@
 /* Stile für die Karten */
 .card{
     border-radius: 0.5rem;
-    background-color: #faf0e6;
+    background-color: white;
 }
 /*Card-Titel unterstreichen und Dicker*/
 .card-title{
@@ -11,11 +11,11 @@
 }
 /*Link grüne Farbe geben*/
 .card-link{
-    color: #4d5d53;
+    color: grey;
 }
 /*Card-Link Hover Effekt hinzufügen*/
 .card-link:hover{
-    text-shadow: 0.25rem 0.25rem 0.5rem#AEAD92;
+    text-shadow: 0.25rem 0.25rem 0.5rem grey;
 }
 /* Stile für die Benutzerprofilkarte */
 .user-profile{

@@ -1,7 +1,7 @@
 body{
     font-family: Montserrat;
     /*Hintergrundbild*/
-    background-image: url("BooksBackgroundPicture.jpg");
+    background-image: url("Background-Black.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -18,5 +18,5 @@ body{
     outline: none;
 }
 .nav-link:hover{
-    text-shadow: 0.25rem 0.25rem 0.5rem#4d5d53;
+    text-shadow: 0.25rem 0.25rem 0.5rem grey;
 }
