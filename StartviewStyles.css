@@ -46,7 +46,10 @@ input{
 .fail-results{
     color: black;
     background: linear-gradient(to right, #33ccff 0%, #9900ff 100%);
-    margin: 2rem;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem black;
     text-align: center;
@@ -80,6 +83,9 @@ input{
         float: none; /* Karten zentrieren */
     }
     .input-wrapper{
+        width: 65%;
+    }
+    .fail-results{
         width: 65%;
     }
 }
