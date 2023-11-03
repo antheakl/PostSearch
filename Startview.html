@@ -26,6 +26,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="StartviewStyles.css">
 
+    <!--Java Script-->
+    <script src="SearchPostID.js"></script>
+    <script src="router.js"></script>
+
 </head>
 //Single Page router initialisieren, router script einfügen, swapcontent umschreiben mit fetch befehlen für Start und Detail HTML,
 //routes ändern, erster kann gleich bleiben, zweite muss "^/posts/(.*)$" , dritte löschen, id für Seiten in HTML Detail idn Start seite einfügen
@@ -34,7 +38,8 @@
 
 <!--Header, Footer und Hintergrund-->
 <header id="header"></header>
-<main>
+<!-- Startseite-->
+<main id="start-page" class="hidden">
 <!--Suchleiste-->
 <div class="input-wrapper">
     <input type="text" id="search-input" onkeydown="Javascript: if (event.keyCode==13) searchPosts();"
@@ -42,14 +47,21 @@
     <button onclick="searchPosts()"><i class="fa fa-search"></i></button>
 </div>
 
+
 <!-- Suchkarten-->
+<main id="searchcards" class="hidden">
 <div class="card-container" id="results"></div>
 
 <!-- Für Fehlermeldungen gebautes Div-->
 <div class="fail-results" id="failResults"></div>
+</main>
 
-<!--Java Script-->
-<script src="SearchPostID.js"></script>
+
+<!--Detailseite (wird im Script gefetched)-->
+<main id="detail-page" class="hidden"></main>
+
+
+
 
 </main>
 
