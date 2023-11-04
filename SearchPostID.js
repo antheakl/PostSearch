@@ -43,7 +43,7 @@ async function searchPosts() {
                     cardText.textContent = `Tags: ${post.tags}`;
 
                     // Link zur Detailansicht als Card-Links hinzufügen
-                    const cardLink = document.createElement("p");
+                    const cardLink = document.createElement("a");
                     cardLink.className = "card-link";
                     cardLink.textContent = "Details";
 
@@ -69,9 +69,9 @@ async function searchPosts() {
         displayError("Da ist etwas bei der Suche falsch gelaufen..sorry!");
     }
 }
+
+//allstart div initialisieren um es wieder einzublenden wenn auf den hombutton gedrückt wird
 const allstart = document.getElementById("allstart")
-
-
 const homeButtonElements = document.querySelectorAll("homebutton");
 const resultsDiv = document.getElementById("results");
 homeButtonElements.forEach(button =>button.addEventListener("click",function(){
@@ -91,14 +91,15 @@ fetch("Footer.html")
     .then(data => {
         document.getElementById("footer").innerHTML = data;
     });
-fetch('Detailview.html') //Detailseite laden aber ausblenden
+//Detailseite wird aus HTML Datei geladen aber noch ausgeblendet
+fetch('Detailview.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('detail-page').innerHTML = data;
     });
 
 
-// Event Listener hinzufügen, um Posts zu suchen, wenn auf Suchen-Button gedrückt wird.
+// Event Listener hinzufügen, um Posts zu suchen, wenn auf Suchen-Button gedrückt wird oder Enter Taste betätigt wird.
 document.getElementById('search').addEventListener('submit', function (e) {
     e.preventDefault();
     searchPosts();
@@ -109,15 +110,17 @@ document.getElementById('search-button').addEventListener('click', function () {
     window.location.hash = `/search`;
 });
 
-//swapContentkonfigurieren
+//SwapContent Methode anpassen
 window.addEventListener("load", () => {
     /**
      * Hilfsfunktion zum Umschalten des sichtbaren Inhalts
      *
-     * @param {String} id HTML-ID des anzuzeigenden <main>-Elements  //Hier wird die ID des (bei mir) main-Element gespeichert
-     * @param {String} title Neuer Titel für den Browser-Tab         //Hier wird der Titel der im Tab angezeigt werden soll gespeichert
+     * @param {String} id HTML-ID des anzuzeigenden <main>-Elements//Hier wird die ID des (bei mir) main-Element gespeichert
+     * @param {String} title Neuer Titel für den Browser-Tab//Hier wird der Titel der im Tab angezeigt werden soll gespeichert
      */
-    let swapContent = (id, title) => {   //Inhalte ein und ausblenden
+
+    //blendet Inhalte aus und ein
+    let swapContent = (id, title) => {
 
         document.querySelectorAll("main").forEach(mainElement => {
             mainElement.classList.add("hidden");
@@ -149,12 +152,12 @@ window.addEventListener("load", () => {
             }
         },
         {
-            url: "^/search$",  //URL wenn man nach den Produkten gesucht hat
+            url: "^/search$",  //URL wenn nach Posts gesucht wird
             show: () => swapContent("searchcards", "Searchresults"),
         }
     ];
 
-    let router = new Router(routes); //Ab hier übernimmt die Router Klasse, an ihr muss nichts geändert werden
+    let router = new Router(routes); //Ab hier Router-Klasse an ihr muss nichts geändert werden
     router.start();
 });
 
