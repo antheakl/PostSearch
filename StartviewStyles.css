@@ -10,10 +10,7 @@
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(to right, #33ccff 0%, #9900ff 100%);
-    margin-bottom: 0.5rem;
-    margin-top: 6rem;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
     padding: 0.5rem;
     border-radius: 0.5rem;
     width: 40%;
@@ -68,7 +65,8 @@ input{
 #card-search{
     border-radius: 0.5rem;
     background-color: white;
-    width: 20rem;
+    width: 25rem;
+    margin: 2rem;
 }
 /*Link grüne Farbe geben*/
 .card-link{
