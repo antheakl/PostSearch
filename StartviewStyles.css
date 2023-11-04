@@ -1,4 +1,7 @@
 /*Suchleiste formatieren, färben und platzieren*/
+.hidden{
+    display: none;
+}
 #search-input{
     font-size: 1rem;
 }
@@ -62,7 +65,7 @@ input{
     justify-content: center; /* Zentriert die Karten horizontal */
 }
 /* Stile für die Karten */
-.card {
+#card-search{
     border-radius: 0.5rem;
     background-color: white;
     width: 20rem;

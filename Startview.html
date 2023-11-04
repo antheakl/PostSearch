@@ -25,28 +25,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="StartviewStyles.css">
+    <link rel="stylesheet" href="DetailviewStyles.css">
 
     <!--Java Script-->
-    <script src="SearchPostID.js"></script>
+    <script src="SearchPostDetails.js"></script>
     <script src="router.js"></script>
 
 </head>
-//Single Page router initialisieren, router script einfügen, swapcontent umschreiben mit fetch befehlen für Start und Detail HTML,
-//routes ändern, erster kann gleich bleiben, zweite muss "^/posts/(.*)$" , dritte löschen, id für Seiten in HTML Detail idn Start seite einfügen
-//links für detailseite auf Startseite ändern => "quotes/quoteid oder so" damit kann in HTML auf die URL gelinkt werden welche Seite aufgerufen wird
+
 <body>
 
 <!--Header, Footer und Hintergrund-->
 <header id="header"></header>
 <!-- Startseite-->
 <main id="start-page" class="hidden">
+    <div id="allstart">
 <!--Suchleiste-->
+        <form action="/search" method="get" id="search">
 <div class="input-wrapper">
     <input type="text" id="search-input" onkeydown="Javascript: if (event.keyCode==13) searchPosts();"
            placeholder="Suche Posts hier...">
-    <button onclick="searchPosts()"><i class="fa fa-search"></i></button>
+    <button id="search-button"><i class="fa fa-search"></i></button>
 </div>
-
+        </form>
+    <script src="SearchPostID.js"></script>
+    </div>
+</main>
 
 <!-- Suchkarten-->
 <main id="searchcards" class="hidden">
@@ -61,9 +65,6 @@
 <main id="detail-page" class="hidden"></main>
 
 
-
-
-</main>
 
 <footer id="footer"></footer>
 </body>
