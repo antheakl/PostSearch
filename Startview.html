@@ -25,30 +25,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="StartviewStyles.css">
+    <link rel="stylesheet" href="DetailviewStyles.css">
+
+    <!--Java Script-->
+    <script src="SearchPostDetails.js"></script>
+    <script src="router.js"></script>
 
 </head>
+
 <body>
 
 <!--Header, Footer und Hintergrund-->
 <header id="header"></header>
-<main>
+<!-- Startseite-->
+<main id="start-page" class="hidden">
+    <div id="allstart">
 <!--Suchleiste-->
+        <form action="/search" method="get" id="search">
 <div class="input-wrapper">
     <input type="text" id="search-input" onkeydown="Javascript: if (event.keyCode==13) searchPosts();"
            placeholder="Suche Posts hier...">
-    <button onclick="searchPosts()"><i class="fa fa-search"></i></button>
+    <button id="search-button"><i class="fa fa-search"></i></button>
 </div>
+        </form>
+    <script src="SearchPostID.js"></script>
+    </div>
+</main>
 
 <!-- Suchkarten-->
+<main id="searchcards" class="hidden">
 <div class="card-container" id="results"></div>
 
 <!-- Für Fehlermeldungen gebautes Div-->
 <div class="fail-results" id="failResults"></div>
-
-<!--Java Script-->
-<script src="SearchPostID.js"></script>
-
 </main>
+
+
+<!--Detailseite (wird im Script gefetched)-->
+<main id="detail-page" class="hidden"></main>
+
+
 
 <footer id="footer"></footer>
 </body>

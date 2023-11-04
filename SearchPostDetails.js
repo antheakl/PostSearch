@@ -1,6 +1,10 @@
 
 //Post Details abrufen
-async function getPostDetails(postId) {
+async function getPostDetails(matches) {
+    const display = document.getElementById("detail-page");
+    const postId = matches[1];
+    console.log(postId);
+
     try {
         // Post ID in API unter Posts suchen
         const response = await fetch(`https://dummyjson.com/posts/${postId}`);
@@ -32,18 +36,20 @@ async function getPostDetails(postId) {
         // Füge die Bootstrap Card dem DOM hinzu
         const postDetailsContainer = document.getElementById("postDetailsContainer");
         postDetailsContainer.appendChild(postDetailsCard);
+        display.append(postDetailsContainer);
         //Funktion für andere Posts des Users aufrufen
-        await getAllPostsOfSameUser(post.userId);
+        await getAllPostsOfSameUser(post.userId, display);
 
     } catch (error) {
         // Fehleranzeige in Konsole und auf "normalem" Bildschirm
         console.error("Fehler beim Abrufen der Postdetails:", error);
         displayError("Fehler beim Abrufen der Postdetails.");
     }
+    await getPostComments(postId, display)
 }
 
 // Post Kommentare abrufen
-async function getPostComments(postId) {
+async function getPostComments(postId, display) {
     try {
         // Kommentare des Posts in API suchen
         const response = await fetch(`https://dummyjson.com/posts/${postId}/comments`);
@@ -92,6 +98,8 @@ async function getPostComments(postId) {
         // Füge die Bootstrap Card dem DOM hinzu
         const postCommentsContainer = document.getElementById("postCommentsContainer");
         postCommentsContainer.appendChild(commentsCard);
+        display.append(postCommentsContainer);
+
 
     } catch (error) {
         // Fehleranzeige in Konsole und auf "normalem" Bildschirm
@@ -100,7 +108,7 @@ async function getPostComments(postId) {
     }
 }
 
-async function getAllPostsOfSameUser(userId) {
+async function getAllPostsOfSameUser(userId, display) {
     try {
         // Alle Posts des Users in API suchen
         const response = await fetch(`https://dummyjson.com/posts/user/${userId}`);
@@ -122,7 +130,10 @@ async function getAllPostsOfSameUser(userId) {
                 // Titel als Links aus Post-Array erzeugen
                 const link = document.createElement("a");
                 link.textContent = similarPosts.title;
-                link.href = `Detailview.html?id=${similarPosts.id}`;
+                link.addEventListener("click", function() {
+                    const postId = similarPosts.id;
+                    window.location.hash = `/posts/${postId}`;
+                });
                 link.classList.add("card-link");
                 // Füge den Link zur Card hinzu
                 cardBody.appendChild(link);
@@ -138,6 +149,7 @@ async function getAllPostsOfSameUser(userId) {
         // Füge die Bootstrap Card dem DOM hinzu
         const postOfSameUserContainer = document.getElementById("postOfSameUserContainer");
         postOfSameUserContainer.appendChild(userPostsCard);
+        display.append(postOfSameUserContainer);
     } catch (error) {
         // Fehleranzeige in Konsole und auf "normalem" Bildschirm
         console.error("Fehler beim Abrufen von Kommentaren von gleichem User.", error);
@@ -150,29 +162,5 @@ function displayError(message) {
     postDetailsDiv.innerHTML = `<p>${message}</p>`;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // die Produkt-ID aus der URL holen
-    const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get("id");
-    //Funktionen für Details und Kommentare der Posts aufrufen
-    if (postId) {
-        getPostDetails(postId);
-        getPostComments(postId);
-    } else {
-        // Fehlerfall, wenn keine PostID in der URL gefunden wurde
-        displayError("Wir haben leider keine Post-ID in der Anfrage gefunden. Bitte suche erneut.");
-    }
-    //Header und Hintergrund aus Header HTML laden
-    fetch("Header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header").innerHTML = data;
-        });
-    //Footer wird aus Footer HTML laden
-    fetch("Footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
-});
+
 
