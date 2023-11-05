@@ -156,7 +156,7 @@ async function getAllPostsOfSameUser(userId, display) {
         displayError("Fehler beim Abrufen von Kommentaren von gleichem User.");
     }
 }
-
+//Errormessage
 function displayError(message) {
     const postDetailsDiv = document.getElementById("post-details");
     postDetailsDiv.innerHTML = `<p>${message}</p>`;

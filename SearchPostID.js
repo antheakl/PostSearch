@@ -70,7 +70,7 @@ async function searchPosts() {
     }
 }
 
-//allstart div initialisieren um es wieder einzublenden wenn auf den hombutton gedrückt wird
+//allstart div initialisieren um es wieder einzublenden wenn auf den homebutton gedrückt wird
 const allstart = document.getElementById("allstart")
 const homeButtonElements = document.querySelectorAll("homebutton");
 const resultsDiv = document.getElementById("results");
